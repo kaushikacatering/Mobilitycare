@@ -458,7 +458,6 @@ foreach ($this->request->post['product_specs'] as $index => $spec) {
         'title' => $spec['title'] ?? '',
         'image' => $image_path
     );
-    error_log('Spec for index ' . $index . ': ' . print_r($product_specs[$index], true));
 }
 
 }
@@ -466,7 +465,6 @@ foreach ($this->request->post['product_specs'] as $index => $spec) {
 
 
 if (empty($this->error)) {
-    error_log('Saving product specs for product_id: ' . $this->request->get['product_id']);
     $this->model_catalog_product->saveProductSpecs($this->request->get['product_id'], $product_specs);
     
     
